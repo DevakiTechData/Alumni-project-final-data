@@ -1,6 +1,6 @@
 # Alumni-project-final-data
 
-🧾 Students Table — students_1
+**🧾 Students Table — students_1**------------------------------------
 📘 Overview
 
 The students_1 table is the foundational dataset of the SLU Alumni Connect data model.
@@ -89,7 +89,7 @@ Joining with events for participation insights
 Linking with employers for job placement analytics
 
 
-🧾 Alumni Table — alumni_1
+**🧾 Alumni Table — alumni_1**---------------------------------------------------------------------------
 📘 Overview
 
 The alumni_1 table represents all Saint Louis University (SLU) graduates and alumni who have transitioned from student status to professional careers.
