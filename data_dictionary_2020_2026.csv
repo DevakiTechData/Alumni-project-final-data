@@ -1,0 +1,42 @@
+Table Name,Column Name,Data Type,Description / Meaning,Relation / Notes
+students_1_final_2020_2026,student_id,UUID,Unique student identifier,PK; linked to alumni
+students_1_final_2020_2026,slu_banner_id,VARCHAR(20),SLU Banner system ID,Unique
+students_1_final_2020_2026,first_name,VARCHAR(80),Student’s first name,
+students_1_final_2020_2026,last_name,VARCHAR(80),Student’s last name,
+students_1_final_2020_2026,program_name,VARCHAR(120),"Academic program (e.g., MS in IS)",
+students_1_final_2020_2026,college_name,VARCHAR(120),College or School within SLU,
+students_1_final_2020_2026,visa_status,ENUM,F1 / H1B / PR / Citizen / Other,
+students_1_final_2020_2026,opt_status,ENUM,None / OPT / STEM OPT,
+students_1_final_2020_2026,current_location_city,VARCHAR(80),Current city,
+students_1_final_2020_2026,linkedin_url,VARCHAR(255),LinkedIn profile,
+alumni_1_final_2020_2026,alumni_id,UUID,Unique alumni identifier,PK
+alumni_1_final_2020_2026,student_id,UUID,Linked student ID,FK → students
+alumni_1_final_2020_2026,employment_status,VARCHAR(60),"Employment type (Full-time, Internship, etc.)",
+alumni_1_final_2020_2026,employer_id,UUID,Employer reference,FK → employers
+alumni_1_final_2020_2026,job_title,VARCHAR(120),Current job title,
+employers_1_final_2020_2026_faang,employer_id,UUID,Employer unique identifier,PK
+employers_1_final_2020_2026_faang,employer_name,VARCHAR(120),Company name,
+employers_1_final_2020_2026_faang,is_faang_company,BOOLEAN,"1 = FAANG, 0 = Non-FAANG",
+employers_1_final_2020_2026_faang,is_non_profit,BOOLEAN,1 = NGO / Academic,
+employers_1_final_2020_2026_faang,slu_partnership_level,VARCHAR(40),Bronze / Silver / Gold,
+jobs_1_final_2020_2026,job_id,UUID,Job posting ID,PK
+jobs_1_final_2020_2026,employer_id,UUID,Employer reference,FK → employers
+jobs_1_final_2020_2026,alumni_id,UUID,Alumni reference,FK → alumni
+jobs_1_final_2020_2026,job_title,VARCHAR(120),Job role,
+events_1_final_2020_2026,event_id,UUID,Event unique identifier,PK
+events_1_final_2020_2026,event_name,VARCHAR(120),Event name,
+events_1_final_2020_2026,event_type,VARCHAR(80),Career Fair / Workshop / Panel,
+events_1_final_2020_2026,organizer_unit,VARCHAR(120),Hosting unit,
+events_1_final_2020_2026,feedback_score_avg,FLOAT,Average feedback score,
+event_attendance_1_final_2020_2026,attendance_id,UUID,Attendance unique identifier,PK
+event_attendance_1_final_2020_2026,event_id,UUID,Event reference,FK → events
+event_attendance_1_final_2020_2026,student_id,UUID,Student reference,FK → students
+event_attendance_1_final_2020_2026,attended,BOOLEAN,"1 = Attended, 0 = No",
+event_attendance_1_final_2020_2026,feedback_score,FLOAT,Feedback rating (0–5),
+engagements_1_final_2020_2026,engagement_id,UUID,Engagement unique ID,PK
+engagements_1_final_2020_2026,alumni_id,UUID,Linked alumni ID,FK → alumni
+engagements_1_final_2020_2026,employer_id,UUID,Linked employer ID,FK → employers
+engagements_1_final_2020_2026,event_id,UUID,Linked event ID,FK → events
+engagements_1_final_2020_2026,engagement_type,VARCHAR(80),Mentorship / Sponsorship / Talk / etc.,
+engagements_1_final_2020_2026,satisfaction_rating,FLOAT,3.0–5.0,
+engagements_1_final_2020_2026,privacy_level,VARCHAR(20),Public / Internal / Restricted,
